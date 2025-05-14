@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Call 911</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff4e50, #f9d423);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .call-wrapper {
+      text-align: center;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .call-btn {
+      display: inline-block;
+      background-color: #e60000;
+      color: white;
+      padding: 18px 40px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .call-btn:hover {
+      background-color: #cc0000;
+    }
+
+    .digits {
+      display: block;
+      font-size: 48px;
+      letter-spacing: 30px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+  <script>
+    // Function to call the dialer directly when clicked
+    function call911() {
+      window.location.href = "tel:911";
+    }
+  </script>
+</head>
+<body>
+  <div class="call-wrapper">
+    <!-- Button triggers the call911 function -->
+    <a href="javascript:void(0);" class="call-btn" onclick="call911()">
+      CALL
+      <span class="digits">9 1 1</span>
+    </a>
+  </div>
+</body>
+</html>
