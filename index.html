@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Zen Conrad – Baptism & 1st Birthday Invitation</title>
+<style>
+/* ===== BACKGROUND: Soft Baby Boy Pastel Gradient ===== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 40%, #cfd8dc 100%);
+  color: #094067;
+  position: relative;
+}
+
+/* confetti overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://i.ibb.co/fVjJFKYQ/baby-boy-shower-card-blue-background-paper-cut-abstract-origami-cloudscape-crescent-moon-and-stars-o.jpg') repeat;
+  background-size: 250px;
+  opacity: 0.07;
+  z-index: -1;
+}
+
+body.lock-scroll {
+  overflow: hidden;
+}
+
+
+/* sparkles */
+@keyframes sparkle {
+  0%,100% {opacity:0.4;transform:scale(1);}
+  50% {opacity:1;transform:scale(1.3);}
+}
+.sparkle {
+  position: fixed;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: radial-gradient(circle,#fff,#cce7ff);
+  opacity: 0.7;
+  animation: sparkle 2.5s infinite ease-in-out;
+}
+.sparkle:nth-child(1){top:20%;left:25%;animation-delay:0s;}
+.sparkle:nth-child(2){top:65%;left:80%;animation-delay:.5s;}
+.sparkle:nth-child(3){top:75%;left:40%;animation-delay:1s;}
+.sparkle:nth-child(4){top:30%;left:60%;animation-delay:1.5s;}
+
+/* ===== ENVELOPE SCREEN ===== */
+.envelope {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://www.textures4photoshop.com/tex/thumbs/white-envelope-letter-PNG-thumb25.png')
+              no-repeat center/contain #f3f6fa;
+  display: flex; justify-content: center; align-items: center;
+  flex-direction: column;
+  z-index: 5;
+  transition: opacity 1s ease;
+}
+
+.play-btn {
+  background: #64b5f6;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 28px;
+  padding: 20px 28px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(79,155,255,0.5);
+  animation: pulse 2s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%,100% {transform:scale(1); box-shadow:0 0 10px #64b5f6;}
+  50% {transform:scale(1.1); box-shadow:0 0 25px #90caf9;}
+}
+
+/* ===== MAIN INVITATION ===== */
+.scene {
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+  max-width: 650px;
+  background: rgba(255,255,255,0.96);
+  border-radius: 25px;
+  margin: 120px auto;
+  opacity: 0;
+  box-shadow: 0 0 25px rgba(79,155,255,0.4);
+  border: 6px solid #90caf9;
+  transition: opacity 1.5s ease;
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.show-scene {
+  opacity: 1;
+}
+
+/* FLOAT ICONS */
+@keyframes floatIcon {
+  0%,100% {transform:translateY(0);}
+  50% {transform:translateY(-10px);}
+}
+@keyframes blinkColor {
+  0% {filter:hue-rotate(0deg);}
+  50% {filter:hue-rotate(90deg);}
+  100% {filter:hue-rotate(0deg);}
+}
+.float {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.9;
+  animation: floatIcon 6s ease-in-out infinite, blinkColor 4s infinite ease-in-out;
+}
+.f1 {left: 10%; top: 10%; animation-delay: 0s;}
+.f2 {right: 10%; top: 20%; animation-delay: 1s;}
+.f3 {left: 15%; bottom: 10%; animation-delay: 2s;}
+.f4 {right: 8%; bottom: 10%; animation-delay: 3s;}
+
+/* BABY PHOTO */
+.photo {
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg,#bbdefb,#90caf9,#e3f2fd);
+  padding: 6px;
+  box-shadow: 0 0 30px rgba(79,155,255,0.5), 0 0 60px rgba(255,255,255,0.6) inset;
+}
+.photo img {
+  width:100%; height:100%; object-fit:cover; border-radius:50%;
+}
+
+/* DETAILS */
+h1 {font-size: 30px; margin: 10px 0;}
+p {font-size: 17px; margin: 5px 0; color:#094067;}
+.details {
+  background: rgba(255,255,255,0.96);
+  border-radius: 18px;
+  padding: 25px;
+  margin: 25px auto;
+  max-width: 90%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+/* RSVP glowing button */
+button {
+  background: #64b5f6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 16px;
+  box-shadow: 0 0 20px rgba(79,155,255,0.5);
+  cursor: pointer;
+  animation: glowBtn 1.5s ease-in-out infinite alternate;
+}
+@keyframes glowBtn {
+  from {box-shadow:0 0 10px #64b5f6,0 0 20px #90caf9;}
+  to {box-shadow:0 0 30px #bbdefb,0 0 40px #64b5f6;}
+}
+
+.music-info {font-size: 14px; color: #1565c0; margin-top: 5px;}
+
+/* ROUTE ICONS */
+.route {margin-top: 50px; position: relative; height: 270px;}
+.road {
+  position: absolute;
+  left: 8%; right: 8%; top: 55%;
+  height: 20px;
+  background: repeating-linear-gradient(90deg,#90caf9 0px,#90caf9 40px,#fff 40px,#fff 60px);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(79,155,255,0.5);
+}
+.icon {
+  position: absolute;
+  font-size: 120px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.6s ease;
+}
+.church {left: 3%; top: 18%;}
+.car {left: 10%; top: 48%; font-size: 100px;}
+.house {right: 5%; top: 15%;}
+
+/* PEOPLE WAVING */
+.people {
+  position: absolute;
+  right: 2%;
+  bottom: 50px;
+  width: 100px;
+  height: 80px;
+  opacity: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.person {width: 10px; height: 40px; background: #333; border-radius: 5px; position: relative;}
+.person::before {content:""; position:absolute; top:-20px; left:-5px; width:20px; height:20px; background:#333; border-radius:50%;}
+.hand {position:absolute; width:25px; height:3px; background:#333; top:5px; left:5px; transform-origin:left center; animation:wave 1s infinite ease-in-out;}
+@keyframes wave {0%,100%{transform:rotate(10deg);}50%{transform:rotate(-30deg);}}
+
+/* RSVP MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center; align-items: center;
+  z-index: 10;
+}
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%; max-width: 500px;
+  padding: 15px;
+}
+.close {float:right;cursor:pointer;font-weight:bold;font-size:20px;}
+</style>
+</head>
+
+<body>
+<!-- Sparkles -->
+<div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div>
+
+<!-- Envelope intro with play button -->
+<div class="envelope" id="envelope">
+  <button class="play-btn" onclick="openInvitation()">▶</button>
+  <p style="color:#1976d2;margin-top:10px;font-weight:bold;">Tap to Open Invitation</p>
+</div>
+
+<!-- Main Invitation -->
+<div class="scene" id="scene">
+  <div class="float f1">🍼</div>
+  <div class="float f2">🎈</div>
+  <div class="float f3">⭐</div>
+  <div class="float f4">🧸</div>
+
+  <div class="photo">
+    <img src="https://i.ibb.co/YT015Q1Z/FB-IMG-1762576813096.jpg" alt="Zen Conrad">
+  </div>
+
+  <h1>You're Invited to the Baptism &amp; 1st Birthday of</h1>
+  <h1 style="color:#1976d2">Zen Conrad</h1>
+  <p>👶 Join us for a day full of blessings, love, and laughter!</p>
+
+  <div class="route" id="route">
+    <div class="road"></div>
+    <div class="icon church" id="church">⛪</div>
+    <div class="icon car" id="car">🚗</div>
+    <div class="icon house" id="house">🏠</div>
+
+    <div class="people" id="people">
+      <div class="person"><div class="hand"></div></div>
+      <div class="person"><div class="hand"></div></div>
+      <div class="person"><div class="hand"></div></div>
+    </div>
+  </div>
+
+  <div class="details">
+    <p><b>Church:</b> Saint Peter Parish Church</p>
+    <p><b>Date:</b> December 28, 2025</p>
+    <p><b>Time:</b> 9:00 AM</p>
+    <p><b>Venue:</b> Hillside Gusa (Lunch Reception)</p>
+    <p><i>“Every good and perfect gift is from above.” — James 1:17</i></p>
+    <button onclick="openModal()" id="rsvpBtn">RSVP</button>
+  </div>
+  <div class="music-info">🎵 Now Playing: <b>Sweet Lullaby</b></div>
+</div>
+
+<!-- RSVP Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScVTCtNbd9L78qvP4PGF7y1tn_PGRJYllddbQXSqSf3oRXXCw/viewform?embedded=true"
+     width="100%" height="450" frameborder="0">Loading…</iframe>
+  </div>
+</div>
+
+<!-- Background lullaby -->
+<audio id="bgMusic" preload="auto" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/05/19/audio_384a7d5110.mp3?filename=sweet-lullaby-1129.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Custom GitHub Narration -->
+<audio id="myNarration" preload="auto">
+  <source src="https://audio.jukehost.co.uk/Lq7MdCKsXAfVzmhneYxCSMJeYOAriXnk" type="audio/mpeg">
+</audio>
+
+<script>
+
+
+
+const music=document.getElementById('bgMusic');
+const narration=document.getElementById('myNarration');
+const envelope=document.getElementById('envelope');
+const scene=document.getElementById('scene');
+const church=document.getElementById('church');
+const car=document.getElementById('car');
+const house=document.getElementById('house');
+const people=document.getElementById('people');
+const modal=document.getElementById('modal');
+const rsvp=document.getElementById('rsvpBtn');
+document.body.classList.add('lock-scroll');
+
+  function unlockScrollAtEnd(){
+  const reachedEnd =
+    window.innerHeight + window.scrollY >= document.body.scrollHeight - 5;
+
+  if (reachedEnd) {
+    setTimeout(() => {
+     document.body.classList.remove('lock-scroll');
+    },6000); // 3 seconds delay
+
+    window.removeEventListener('scroll', unlockScrollAtEnd);
+  }
+}
+
+
+
+function openModal(){modal.style.display='flex';}
+function closeModal(){modal.style.display='none';}
+
+/* When the play button is clicked */
+function openInvitation(){
+  envelope.style.opacity='0';
+
+  setTimeout(()=>{
+    envelope.style.display='none';
+    scene.classList.add('show-scene');
+
+    music.volume=0.6;
+    narration.volume=0.8;
+    music.play();
+    narration.play();
+
+    // Auto-scroll after scene appears
+    setTimeout(autoScrollToRoute, 11000);
+
+  },1000);
+}
+
+
+/* ---- ICON ANIMATIONS ---- */
+function playSequence(){
+  // === CHURCH ICON APPEAR ===
+  // ⏱ change delay (currently 0 ms)
+  setTimeout(()=>{
+    church.style.opacity=1;
+    church.animate([{transform:'scale(0)'},{transform:'scale(1.3)'},{transform:'scale(1)'}],
+       {duration:1200,easing:'ease-out'});
+  },4000);
+
+  // === CAR MOVEMENT ===
+  // ⏱ change delay (currently 4000 ms)
+  setTimeout(()=>{
+    car.style.opacity=1;
+    car.animate([{transform:'translateX(0)'},{transform:'translateX(60vw)'}],
+      {duration:6000,fill:'forwards',easing:'ease-in-out'});
+  },5500);
+
+  // === HOUSE APPEAR ===
+  // ⏱ change delay (currently 10000 ms)
+  setTimeout(()=>{
+    house.style.opacity=1;
+    house.animate([{transform:'scale(0.4)'},{transform:'scale(1.2)'},{transform:'scale(1)'}],
+      {duration:1000,easing:'ease-out'});
+    // === SHOW PEOPLE WAVING ===
+    // ⏱ change delay (currently 1000 ms after house)
+    setTimeout(()=>{people.style.opacity=1;},1000);
+  },10000);
+}
+
+
+
+const route = document.getElementById('route');
+let animationPlayed = false;
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !animationPlayed) {
+      animationPlayed = true;
+      route.classList.add('show');
+      playSequence();
+    }
+  });
+}, { threshold: 0.4 });
+
+observer.observe(route);
+
+
+  function autoScrollToRoute(){
+  const route = document.getElementById('route');
+
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+  window.addEventListener('scroll', unlockScrollAtEnd);
+
+
+
+
+
+  // Start animation after scroll finishes
+setTimeout(()=>{
+  if (!animationPlayed) {
+    animationPlayed = true;
+    playSequence();
+   // document.body.classList.remove('lock-scroll');
+  }
+},1500);
+
+}
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
