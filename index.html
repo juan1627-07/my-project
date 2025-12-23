@@ -274,7 +274,7 @@ button {
     <p><b>Church:</b> Saint Peter Parish Church</p>
     <p><b>Date:</b> December 28, 2025</p>
     <p><b>Time:</b> 9:00 AM</p>
-    <p><b>Venue:</b> Hillside Gusa (Lunch Reception)</p>
+    <p><b>Venue:</b> Hillside Gusa <br> (Lunch Reception)</p>
     <p><i>“Every good and perfect gift is from above.” — James 1:17</i></p>
     <button onclick="openModal()" id="rsvpBtn">RSVP</button>
   </div>
@@ -297,7 +297,7 @@ button {
 
 <!-- Custom GitHub Narration -->
 <audio id="myNarration" preload="auto">
-  <source src="https://audio.jukehost.co.uk/Lq7MdCKsXAfVzmhneYxCSMJeYOAriXnk" type="audio/mpeg">
+  <source src="https://audio.jukehost.co.uk/UcppeRnurHIKd6ZnhKnJIYyyzd3lLeNO" type="audio/mpeg">
 </audio>
 
 <script>
@@ -323,7 +323,7 @@ document.body.classList.add('lock-scroll');
   if (reachedEnd) {
     setTimeout(() => {
      document.body.classList.remove('lock-scroll');
-    },6000); // 3 seconds delay
+    },7000); // 3 seconds delay
 
     window.removeEventListener('scroll', unlockScrollAtEnd);
   }
@@ -348,7 +348,7 @@ function openInvitation(){
     narration.play();
 
     // Auto-scroll after scene appears
-    setTimeout(autoScrollToRoute, 11000);
+    setTimeout(autoScrollToRoute, 12000);
 
   },1000);
 }
@@ -369,8 +369,8 @@ function playSequence(){
   setTimeout(()=>{
     car.style.opacity=1;
     car.animate([{transform:'translateX(0)'},{transform:'translateX(60vw)'}],
-      {duration:6000,fill:'forwards',easing:'ease-in-out'});
-  },5500);
+      {duration:7000,fill:'forwards',easing:'ease-in-out'});
+  },7500);
 
   // === HOUSE APPEAR ===
   // ⏱ change delay (currently 10000 ms)
